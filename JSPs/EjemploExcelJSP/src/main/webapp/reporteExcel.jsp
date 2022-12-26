@@ -3,12 +3,13 @@
     Created on : 26 dic. 2022, 8:21:10
     Author     : emers
 --%>
-
+<%@page errorPage="WEB-INF/manejoErrores.jsp" %>
 <%@page import="utilerias.Conversiones, java.util.Date" %>
 <%@page contentType="application/vnd.ms-excel" %>
 <%
     String nombreArchivo = "reporte.xls";
-    response.setHeader("Content-Disposition", "attachment;filename=" + nombreArchivo);
+    //response.setHeader("Content-Disposition", "attachment;filename=" + nombreArchivo);
+    response.setHeader("Content-Disposition", "inline;filename=" + nombreArchivo);
 %>
 <!DOCTYPE html>
 <html>
@@ -27,7 +28,8 @@
             <tr>
                 <td>1. Fundamentos de Java</td>
                 <td>Aprenderemos la sintaxis basica de Java</td>
-                <td><%= Conversiones.format(new Date())%></td>
+                <%-- <td><%= Conversiones.format(new Date())%></td> --%>
+                <td><%= Conversiones.format("500")%></td>
             </tr>
             <tr>
                 <td>2. Programacion con Java</td>
